@@ -18,7 +18,9 @@ class TextWindow extends PureComponent {
 	}
 
 	next() {
-		this.setState({dialogue: this.state.dialogue + 1})
+		if (this.props.text.length > this.state.dialogue + 1) {
+			this.setState({dialogue: this.state.dialogue + 1})
+		}
 	}
 
 	render() {
