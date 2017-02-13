@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import logo from './CicadaHusk.jpg';
-// import bg from './stairs.jpg'
 
 import BackgroundImage from './components/BackgroundImage/BackgroundImage'
 import TextWindow from './components/TextWindow/TextWindow'
 import Language from './components/Language/Language'
+import NameEntry from './components/NameEntry/NameEntry'
 
+import { MENU } from './constants/menu'
 import { DIALOGUE } from './constants/dialogue'
 import { LOCATION } from './constants/location'
 
@@ -17,12 +18,18 @@ class App extends Component {
 		super(props)
 
 		this.state = {
+			profile: {
+				firstName: '',
+				lastName: '',
+			},
+			progressCode: '',
 			dialogue: 0,
 			language: 'english',
 		}
 
 		this.next = this.next.bind(this)
 		this.handleLanguage = this.handleLanguage.bind(this)
+		this.handleProfile = this.handleProfile.bind(this)
 	}
 
 	next() {
@@ -32,7 +39,18 @@ class App extends Component {
 	}
 
 	handleLanguage(event) {
-		this.setState({language: event.target.value})
+		this.setState({ language: event.target.value })
+	}
+
+	handleProfile(event) {
+		// can be abstracted more later
+		if (event.target.name === 'firstName') {
+			this.setState({ profile: { firstName: event.target.value } })
+		}
+
+		if (event.target.name === 'lastName') {
+			this.setState({ profile: { lastName: event.target.value } })
+		}
 	}
 
 	get dialogue() {
@@ -49,8 +67,14 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>{DIALOGUE.title[this.state.language]}</h1>
+          <h1>{MENU.title[this.state.language]}</h1>
 					<Language action={this.handleLanguage} value={this.state.language} />
+					<NameEntry
+						profile={this.state.profile}
+						action={this.handleProfile}
+						menu={MENU.nameEntry}
+						language={this.state.language}
+					/>
         </div>
 				<div className="gameScreen" >
 					<BackgroundImage source={this.location} />
@@ -59,6 +83,7 @@ class App extends Component {
 						dialogue={this.dialogue}
 						step={this.state.dialogue}
 						language={this.state.language}
+						profile={this.state.profile}
 					/>
 				</div>
       </div>

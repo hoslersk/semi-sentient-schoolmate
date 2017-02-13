@@ -4,7 +4,7 @@ class NextButton extends PureComponent {
 
 	render() {
 		return (
-			<span className="nextButton" onClick={this.props.action}>{'>>'}</span>
+			<span className="nextButton" onClick={this.props.action}>Next</span>
 		)
 	}
 }

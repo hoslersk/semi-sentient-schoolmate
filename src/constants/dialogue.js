@@ -1,12 +1,8 @@
 export const DIALOGUE = {
-	title: {
-		english: 'Semi-Sentient Schoolmate',
-		japanese: '蝉・センティエント・スクールメート',
-	},
 	intro: [
 		{
 			text: {
-				english: 'Welcome to Semi-Sentient Schoolmate! More coming soon...',
+				english: 'Welcome to Semi-Sentient Schoolmate%FIRST-NAME-END%! More coming soon...',
 				japanese: 'セミセンへようこそ！ 近日公開予定です。',
 			},
 			location: 'stairs',
