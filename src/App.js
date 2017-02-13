@@ -1,25 +1,65 @@
 import React, { Component } from 'react';
 import logo from './CicadaHusk.jpg';
-import bg from './stairs.jpg'
+// import bg from './stairs.jpg'
 
 import BackgroundImage from './components/BackgroundImage/BackgroundImage'
 import TextWindow from './components/TextWindow/TextWindow'
+import Language from './components/Language/Language'
 
-import { TEXT } from './constants/text'
+import { DIALOGUE } from './constants/dialogue'
+import { LOCATION } from './constants/location'
 
 import './App.css';
 
 class App extends Component {
+
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			dialogue: 0,
+			language: 'english',
+		}
+
+		this.next = this.next.bind(this)
+		this.handleLanguage = this.handleLanguage.bind(this)
+	}
+
+	next() {
+		if (DIALOGUE.intro.length > this.state.dialogue + 1) {
+			this.setState({dialogue: this.state.dialogue + 1})
+		}
+	}
+
+	handleLanguage(event) {
+		this.setState({language: event.target.value})
+	}
+
+	get dialogue() {
+		// Will update with addition of chapters/sections
+		return DIALOGUE.intro
+	}
+
+	get location() {
+		// Will update with addition of chapters/sections
+		return LOCATION[DIALOGUE.intro[this.state.dialogue].location]
+	}
+
   render() {
     return (
       <div className="App">
         <div className="App-header">
-					<h3>蝉・センティエント・スクールメート</h3>
-          <h2>Semi-Sentient Schoolmate</h2>
+          <h1>{DIALOGUE.title[this.state.language]}</h1>
+					<Language action={this.handleLanguage} value={this.state.language} />
         </div>
 				<div className="gameScreen" >
-					<BackgroundImage source={bg} />
-					<TextWindow text={TEXT.intro} />
+					<BackgroundImage source={this.location} />
+					<TextWindow
+						action={this.next}
+						dialogue={this.dialogue}
+						step={this.state.dialogue}
+						language={this.state.language}
+					/>
 				</div>
       </div>
     );

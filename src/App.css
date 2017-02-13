@@ -1,6 +1,20 @@
+.languageOptions {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 16px;
+  /*display: inline-block;*/
+}
+
+.languageOption {
+  /*float: left;*/
+  height: 24px;
+}
+
 .textbox {
-  height: 144px;
-  width: 99.6%;
+  max-height: 144px;
+  min-height: 140px;
+  width: 99%;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid rgba(85, 97, 78, 1);
   color: white;
@@ -10,10 +24,11 @@
   bottom: 0px;
   right: 0px;
   left: 0px;
+  margin: 4px;
 }
 
 .dialogue {
-  margin: 50px 8px;
+  margin: 40px 8px;
 }
 
 .nextButton {

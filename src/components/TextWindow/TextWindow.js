@@ -7,34 +7,21 @@ import styles from './styles.scss'
 
 class TextWindow extends PureComponent {
 
-	constructor(props) {
-		super(props)
-
-		this.state = {
-			dialogue: 0
-		}
-
-		this.next = this.next.bind(this)
-	}
-
-	next() {
-		if (this.props.text.length > this.state.dialogue + 1) {
-			this.setState({dialogue: this.state.dialogue + 1})
-		}
-	}
-
 	render() {
 		return (
 			<div className="textbox" >
-				<Dialogue text={this.props.text[this.state.dialogue]} />
-				<NextButton action={this.next}/>
+				<Dialogue text={this.props.dialogue[this.props.step].text[this.props.language]} />
+				<NextButton action={this.props.action} />
 			</div>
 		)
 	}
 }
 
 TextWindow.propTypes = {
-	text: PropTypes.array,
+	action: PropTypes.func,
+	dialogue: PropTypes.array,
+	step: PropTypes.number,
+	language: PropTypes.string,
 }
 
 export default TextWindow
