@@ -5,10 +5,12 @@ import BackgroundImage from './components/BackgroundImage/BackgroundImage'
 import TextWindow from './components/TextWindow/TextWindow'
 import Language from './components/Language/Language'
 import NameEntry from './components/NameEntry/NameEntry'
+import Character from './components/Character/Character'
 
 import { MENU } from './constants/menu'
 import { DIALOGUE } from './constants/dialogue'
 import { LOCATION } from './constants/location'
+import { CHARACTER } from './constants/character'
 
 import './App.css';
 
@@ -32,6 +34,7 @@ class App extends Component {
 		this.handleLanguage = this.handleLanguage.bind(this)
 		this.handleProfile = this.handleProfile.bind(this)
 		this.enroll = this.enroll.bind(this)
+		this.dropOut = this.dropOut.bind(this)
 	}
 
 	componentDidMount() {
@@ -60,7 +63,20 @@ class App extends Component {
 	}
 
 	enroll() {
-		debugger
+		localStorage.setItem('semisen', JSON.stringify(this.state))
+	}
+
+	dropOut() {
+		const initialState =  {
+			profile: {
+				firstName: '',
+				lastName: '',
+			},
+			progressCode: '',
+			dialogue: 0,
+			language: 'english',
+		}
+		this.setState(initialState)
 		localStorage.setItem('semisen', JSON.stringify(this.state))
 	}
 
@@ -74,6 +90,19 @@ class App extends Component {
 		return LOCATION[DIALOGUE.intro[this.state.dialogue].location]
 	}
 
+	get character() {
+		// Will update with addition of chapters/sections
+		if (DIALOGUE.intro[this.state.dialogue].hasOwnProperty('character')) {
+			return CHARACTER[DIALOGUE.intro[this.state.dialogue].character]
+		}
+
+		return null
+	}
+
+	get characterImage() {
+		return 	<Character source={this.character} />
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -84,10 +113,11 @@ class App extends Component {
 						profile={this.state.profile}
 						updateAction={this.handleProfile}
 						enrollAction={this.enroll}
+						dropOutAction={this.dropOut}
 						menu={MENU.nameEntry}
 						language={this.state.language}
 					/>
-					<audio ref="audio" className="audio" loop autoplay>
+					<audio ref="audio" className="audio" loop autoPlay>
 						<source
 							src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"
 							type="audio/ogg"
@@ -100,6 +130,7 @@ class App extends Component {
 					</div>
 				<div className="gameScreen" >
 					<BackgroundImage source={this.location} />
+					{this.characterImage}
 					<TextWindow
 						action={this.next}
 						dialogue={this.dialogue}

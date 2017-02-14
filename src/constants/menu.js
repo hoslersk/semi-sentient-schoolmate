@@ -20,5 +20,9 @@ export const MENU = {
 			english: 'Enroll',
 			japanese: '入学する',
 		},
+		dropOut: {
+			english: 'Drop Out',
+			japanese: '中退する',
+		},
 	}
 }

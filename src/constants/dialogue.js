@@ -13,6 +13,7 @@ export const DIALOGUE = {
 				japanese: 'まだまだ。',
 			},
 			location: 'library',
+			character: 'turtle',
 		},
 		{
 			text: {

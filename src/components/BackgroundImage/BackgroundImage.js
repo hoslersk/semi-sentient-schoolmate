@@ -4,7 +4,7 @@ class BackgroundImage extends PureComponent {
 
 	render() {
 		return (
-				<img src={this.props.source} className="backgroundImage" />
+			<img src={this.props.source} className="backgroundImage" />
 		)
 	}
 }

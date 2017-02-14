@@ -15,7 +15,10 @@
   z-index: 3;
   position: absolute;
   top: 0px;
+  left: 0px;
   margin: 16px;
+  display: inline-block;
+  width: 600px;
 }
 
 .textbox {
@@ -35,6 +38,13 @@
   /*font-family: 'Permanent Marker', cursive;*/
   font-family: 'Rock Salt', cursive;
   /*font-family: 'Trade Winds', cursive;*/
+}
+
+.characterImage {
+  z-index: 1;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
 
 .dialogue {
@@ -94,6 +104,17 @@
 
 .textInput {
   font-family: 'Rock Salt', cursive;
+  float: left;
+}
+
+.nameInputs {
+  float: left;
+  display: inline-block;
+  width: 140px;
+}
+
+.nameEntryHeader {
+  float: left;
 }
 
 .enrollButton {
@@ -101,9 +122,24 @@
   width: 88px;
   border-radius: 50px;
   padding: 4px 8px;
+  float: left;
+  margin-top: 8px;
 }
 
 .enrollButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.dropOutButton {
+  width: 100px;
+  border-radius: 50px;
+  padding: 4px 8px;
+  float: left;
+  margin-top: 8px;
+}
+
+.dropOutButton:hover {
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
 }
@@ -112,7 +148,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   height: 100px;
   z-index: 2;
-  color: rgb(158, 72, 63);
+	color: rgb(187, 10, 30);
   position: absolute;
   top: 0px;
   right: 0px;
