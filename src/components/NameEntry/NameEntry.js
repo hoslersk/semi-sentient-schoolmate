@@ -9,7 +9,11 @@ class NameEntry extends PureComponent {
 	}
 
 	handleChange(event) {
-		this.props.action(event)
+		this.props.updateAction(event)
+	}
+
+	handleEnroll(event) {
+		this.props.enrollAction(event)
 	}
 
 	render() {
@@ -18,6 +22,7 @@ class NameEntry extends PureComponent {
 				<span>{this.props.menu.header[this.props.language]}</span>
 				<br />
 				<input
+					className="textInput"
 					type="text"
 					name="firstName"
 					placeholder={this.props.menu.firstName[this.props.language]}
@@ -25,19 +30,27 @@ class NameEntry extends PureComponent {
 					onChange={this.handleChange}
 				/>
 				<input
+					className="textInput"
 					type="text"
 					name="lastName"
 					placeholder={this.props.menu.lastName[this.props.language]}
 					value={this.props.profile.lastName}
 					onChange={this.handleChange}
 				/>
+				<span
+					className="enrollButton"
+					onClick={this.props.enrollAction}
+				>
+					{this.props.menu.enroll[this.props.language]}
+				</span>
 			</form>
 		)
 	}
 }
 
 NameEntry.propTypes = {
-	action: PropTypes.func,
+	updateAction: PropTypes.func,
+	enrollAction: PropTypes.func,
 	profile: PropTypes.object,
 	menu: PropTypes.object,
 	language: PropTypes.string,

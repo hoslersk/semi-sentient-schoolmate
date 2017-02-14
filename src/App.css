@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
 .languageOptions {
   position: absolute;
   right: 0px;
@@ -29,6 +31,10 @@
   right: 0px;
   left: 0px;
   margin: 4px;
+	/*font-family: 'Amatic SC', cursive;*/
+  /*font-family: 'Permanent Marker', cursive;*/
+  font-family: 'Rock Salt', cursive;
+  /*font-family: 'Trade Winds', cursive;*/
 }
 
 .dialogue {
@@ -37,13 +43,16 @@
 
 .nextButton {
   margin: 24px;
+  width: 80px;
   position: absolute;
   bottom: 0px;
   right: 0px;
+  border-radius: 50px;
 }
 
 .nextButton:hover {
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .backgroundImage {
@@ -68,16 +77,62 @@
   height: 80px;
 }*/
 
-.App-header {
+.englishAppHeader {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100px;
   z-index: 2;
-  color: red;
+  color: rgb(187, 10, 30);
   position: absolute;
   top: 0px;
   right: 0px;
   left: 0px;
+  /*font-family: 'Amatic SC', cursive;*/
+  /*font-family: 'Permanent Marker', cursive;*/
+  font-family: 'Rock Salt', cursive;
+  /*font-family: 'Trade Winds', cursive;*/
 }
+
+.textInput {
+  font-family: 'Rock Salt', cursive;
+}
+
+.enrollButton {
+  margin-left: 16px;
+  width: 88px;
+  border-radius: 50px;
+  padding: 4px 8px;
+}
+
+.enrollButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.japaneseAppHeader {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100px;
+  z-index: 2;
+  color: rgb(158, 72, 63);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  font-family: 'Noto Sans Japanese', serif;
+  font-weight: 200;
+  /*font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;*/
+}
+
+/*font-family: 'Bahiana', cursive;
+font-family: 'Amatic SC', cursive;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Sansita', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Rock Salt', cursive;
+font-family: 'Freckle Face', cursive;
+font-family: 'Sue Ellen Francisco', cursive;
+font-family: 'Creepster', cursive;
+font-family: 'Trade Winds', cursive;
+font-family: 'Butcherman', cursive;*/
 
 /*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }

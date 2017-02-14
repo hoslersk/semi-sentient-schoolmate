@@ -16,5 +16,9 @@ export const MENU = {
 			english: 'Last Name',
 			japanese: '姓',
 		},
+		enroll: {
+			english: 'Enroll',
+			japanese: '入学する',
+		},
 	}
 }

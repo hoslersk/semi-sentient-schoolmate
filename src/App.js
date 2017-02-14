@@ -70,12 +70,13 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div className="App-header">
+				<div className={`${this.state.language}AppHeader`}>
 					<h1>{MENU.title[this.state.language]}</h1>
 					<Language action={this.handleLanguage} value={this.state.language} />
 					<NameEntry
 						profile={this.state.profile}
-						action={this.handleProfile}
+						updateAction={this.handleProfile}
+						enrollAction={this.enroll}
 						menu={MENU.nameEntry}
 						language={this.state.language}
 					/>
