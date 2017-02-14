@@ -105,6 +105,10 @@
 .textInput {
   font-family: 'Rock Salt', cursive;
   float: left;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(187, 10, 30);
+  border: 2px solid rgba(85, 97, 78, 1);
+  text-align: center;
 }
 
 .nameInputs {
