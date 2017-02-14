@@ -107,7 +107,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<div className={`${this.state.language}AppHeader`}>
-					<h1>{MENU.title[this.state.language]}</h1>
+					<h1 className="headline">{MENU.title[this.state.language]}</h1>
 					<Language action={this.handleLanguage} value={this.state.language} />
 					<NameEntry
 						profile={this.state.profile}

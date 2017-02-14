@@ -2,6 +2,7 @@ import React, { PureComponent, PropTypes } from 'react'
 
 import Dialogue from '../Dialogue/Dialogue'
 import NextButton from '../NextButton/NextButton'
+import Speaker from '../Speaker/Speaker'
 
 import styles from './styles.scss'
 
@@ -24,9 +25,18 @@ class TextWindow extends PureComponent {
 		// }
 	}
 
+	get speaker() {
+		if (this.props.dialogue[this.props.step].hasOwnProperty('speaker')) {
+			return <Speaker text={this.props.dialogue[this.props.step].speaker[this.props.language]} />
+		}
+
+		return null
+	}
+
 	render() {
 		return (
 			<div className="textbox" >
+				{this.speaker}
 				<Dialogue text={this.props.dialogue[this.props.step].text[this.props.language].replace('%FIRST-NAME-END%', `, ${this.props.profile.firstName}`)} />
 				<NextButton action={this.props.action} />
 			</div>

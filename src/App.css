@@ -21,6 +21,15 @@
   width: 600px;
 }
 
+.headline {
+  line-height: 50px;
+}
+
+.speaker {
+  float: left;
+  margin: 4px 16px;
+}
+
 .textbox {
   max-height: 144px;
   width: 99%;

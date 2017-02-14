@@ -1,5 +1,5 @@
-import turtle from '../characters/turtle.png'
+import Turtle from '../characters/turtle.png'
 
 export const CHARACTER = {
-	turtle,
+	Turtle,
 }
