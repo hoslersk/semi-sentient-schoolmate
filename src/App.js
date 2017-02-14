@@ -32,6 +32,10 @@ class App extends Component {
 		this.handleProfile = this.handleProfile.bind(this)
 	}
 
+	componentDidMount() {
+		this.refs.audio.play()
+	}
+
 	next() {
 		if (DIALOGUE.intro.length > this.state.dialogue + 1) {
 			this.setState({dialogue: this.state.dialogue + 1})
@@ -63,11 +67,11 @@ class App extends Component {
 		return LOCATION[DIALOGUE.intro[this.state.dialogue].location]
 	}
 
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h1>{MENU.title[this.state.language]}</h1>
+	render() {
+		return (
+			<div className="App">
+				<div className="App-header">
+					<h1>{MENU.title[this.state.language]}</h1>
 					<Language action={this.handleLanguage} value={this.state.language} />
 					<NameEntry
 						profile={this.state.profile}
@@ -75,7 +79,17 @@ class App extends Component {
 						menu={MENU.nameEntry}
 						language={this.state.language}
 					/>
-        </div>
+					<audio ref="audio" className="audio" loop autoplay>
+						<source
+							src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"
+							type="audio/ogg"
+						/>
+						<source
+							src="https://ia802205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.mp3"
+							type="audio/mpeg"
+						/>
+					</audio>
+					</div>
 				<div className="gameScreen" >
 					<BackgroundImage source={this.location} />
 					<TextWindow
@@ -86,9 +100,9 @@ class App extends Component {
 						profile={this.state.profile}
 					/>
 				</div>
-      </div>
-    );
-  }
+			</div>
+		);
+	}
 }
 
 export default App;
