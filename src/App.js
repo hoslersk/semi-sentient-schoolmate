@@ -16,8 +16,7 @@ class App extends Component {
 
 	constructor(props) {
 		super(props)
-
-		this.state = {
+		const initialState =  {
 			profile: {
 				firstName: '',
 				lastName: '',
@@ -27,9 +26,12 @@ class App extends Component {
 			language: 'english',
 		}
 
+		this.state = JSON.parse(localStorage.getItem('semisen')) || initialState
+
 		this.next = this.next.bind(this)
 		this.handleLanguage = this.handleLanguage.bind(this)
 		this.handleProfile = this.handleProfile.bind(this)
+		this.enroll = this.enroll.bind(this)
 	}
 
 	componentDidMount() {
@@ -49,12 +51,17 @@ class App extends Component {
 	handleProfile(event) {
 		// can be abstracted more later
 		if (event.target.name === 'firstName') {
-			this.setState({ profile: { firstName: event.target.value } })
+			this.setState({ profile: { firstName: event.target.value, lastName: this.state.profile.lastName } })
 		}
 
 		if (event.target.name === 'lastName') {
-			this.setState({ profile: { lastName: event.target.value } })
+			this.setState({ profile: { lastName: event.target.value, firstName: this.state.profile.firstName } })
 		}
+	}
+
+	enroll() {
+		debugger
+		localStorage.setItem('semisen', JSON.stringify(this.state))
 	}
 
 	get dialogue() {
