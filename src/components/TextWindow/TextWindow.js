@@ -33,11 +33,23 @@ class TextWindow extends PureComponent {
 		return null
 	}
 
+	get updatedText() {
+		if (this.props.profile.firstName !== '') {
+			return this.props.dialogue[this.props.step].text[this.props.language].replace(
+				'Stranger', this.props.profile.firstName
+			)
+		}
+
+		return this.props.dialogue[this.props.step].text[this.props.language]
+	}
+
 	render() {
 		return (
 			<div className="textbox" >
 				{this.speaker}
-				<Dialogue text={this.props.dialogue[this.props.step].text[this.props.language].replace('%FIRST-NAME-END%', `, ${this.props.profile.firstName}`)} />
+				<Dialogue
+					text={this.updatedText}
+				/>
 				<NextButton action={this.props.action} />
 			</div>
 		)

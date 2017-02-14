@@ -2,7 +2,7 @@ export const DIALOGUE = {
 	intro: [
 		{
 			text: {
-				english: 'Welcome to Semi-Sentient Schoolmate%FIRST-NAME-END%! More coming soon...',
+				english: 'Welcome to Semi-Sentient Schoolmate, Stranger! More coming soon...',
 				japanese: 'セミセンへようこそ！ 近日公開予定です。',
 			},
 			location: 'stairs',
