@@ -6,6 +6,7 @@ export const DIALOGUE = {
 				japanese: 'セミセンへようこそ！ 近日公開予定です。',
 			},
 			location: 'stairs',
+			effect: 'lighteffect',
 		},
 		{
 			text: {

@@ -38,7 +38,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.refs.audio.play()
+		// this.refs.audio.play()
 	}
 
 	next() {
@@ -103,6 +103,14 @@ class App extends Component {
 		return 	<Character source={this.character} />
 	}
 
+	get effect() {
+		if (DIALOGUE.intro[this.state.dialogue].hasOwnProperty('effect')) {
+			return <span className={DIALOGUE.intro[this.state.dialogue].effect} />
+		}
+
+		return null
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -117,7 +125,7 @@ class App extends Component {
 						menu={MENU.nameEntry}
 						language={this.state.language}
 					/>
-					<audio ref="audio" className="audio" loop autoPlay>
+					<audio ref="audio" className="audio" loop>
 						<source
 							src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"
 							type="audio/ogg"
@@ -129,6 +137,7 @@ class App extends Component {
 					</audio>
 					</div>
 				<div className="gameScreen" >
+					{this.effect}
 					<BackgroundImage source={this.location} />
 					{this.characterImage}
 					<TextWindow

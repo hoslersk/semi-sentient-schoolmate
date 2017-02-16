@@ -1,29 +1,8 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
-
-@keyframes lighteffect {
-
-		0%  {background: rgba(255, 255, 255, .1);}
-	 25%  {background: rgba(255, 255, 255, .2);}
-	 50%  {background: rgba(255, 255, 255, .03)}
-	 75%  {background: rgba(255, 255, 255, .16)}
-	 100% {background: rgba(255, 255, 255, .05)}
-}
-
-
-.lighteffect {
-	animation-name: lighteffect;
-	animation-duration: 13s;
-  animation-iteration-count: infinite;
-	/*transition-timing-function: cubic-bezier(0.57, 2.47, 0.76, -0.56);*/
-  z-index: 1;
-	width: 100%;
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
-}
+/*// body {
+//   background: rgba(0, 0, 0, 1);
+// }*/
 
 .languageOptions {
   position: absolute;
@@ -68,10 +47,10 @@
   right: 0px;
   left: 0px;
   margin: 4px;
-	/*font-family: 'Amatic SC', cursive;*/
-  /*font-family: 'Permanent Marker', cursive;*/
+	// font-family: 'Amatic SC', cursive;
+  // font-family: 'Permanent Marker', cursive;
   font-family: 'Rock Salt', cursive;
-  /*font-family: 'Trade Winds', cursive;*/
+  // font-family: 'Trade Winds', cursive;
 }
 
 .characterImage {
@@ -100,15 +79,12 @@
 }
 
 .backgroundImage {
-  width: 100%;
+  width: 100px;
   z-index: 0;
   position: absolute;
   bottom: 0px;
   right: 0px;
   left: 0px;
-	animation-name: example;
-	animation-duration: 4s;
-	animation-iteration-count: infinite;
 }
 
 .gameScreen {
@@ -119,10 +95,10 @@
   text-align: center;
 }
 
-/*.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}*/
+// .App-logo {
+//   animation: App-logo-spin infinite 20s linear;
+//   height: 80px;
+// }
 
 .englishAppHeader {
   background-color: rgba(0, 0, 0, 0.8);
@@ -133,16 +109,16 @@
   top: 0px;
   right: 0px;
   left: 0px;
-  /*font-family: 'Amatic SC', cursive;*/
-  /*font-family: 'Permanent Marker', cursive;*/
+  // font-family: 'Amatic SC', cursive;
+  // font-family: 'Permanent Marker', cursive;
   font-family: 'Rock Salt', cursive;
-  /*font-family: 'Trade Winds', cursive;*/
+  // font-family: 'Trade Winds', cursive;
 }
 
 .textInput {
   font-family: 'Rock Salt', cursive;
   float: left;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   color: rgb(187, 10, 30);
   border: 2px solid rgba(85, 97, 78, 1);
   text-align: center;
@@ -159,9 +135,8 @@
 }
 
 .enrollButton {
-  font-size: 12px;
   margin-left: 16px;
-  width: 60px;
+  width: 88px;
   border-radius: 50px;
   padding: 4px 8px;
   float: left;
@@ -174,8 +149,7 @@
 }
 
 .dropOutButton {
-  font-size: 12px;
-  width: 80px;
+  width: 100px;
   border-radius: 50px;
   padding: 4px 8px;
   float: left;
@@ -198,22 +172,22 @@
   left: 0px;
   font-family: 'Noto Sans Japanese', serif;
   font-weight: 200;
-  /*font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;*/
+  // font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
 }
 
-/*font-family: 'Bahiana', cursive;
-font-family: 'Amatic SC', cursive;
-font-family: 'Shadows Into Light', cursive;
-font-family: 'Sansita', sans-serif;
-font-family: 'Permanent Marker', cursive;
-font-family: 'Rock Salt', cursive;
-font-family: 'Freckle Face', cursive;
-font-family: 'Sue Ellen Francisco', cursive;
-font-family: 'Creepster', cursive;
-font-family: 'Trade Winds', cursive;
-font-family: 'Butcherman', cursive;*/
+// font-family: 'Bahiana', cursive;
+// font-family: 'Amatic SC', cursive;
+// font-family: 'Shadows Into Light', cursive;
+// font-family: 'Sansita', sans-serif;
+// font-family: 'Permanent Marker', cursive;
+// font-family: 'Rock Salt', cursive;
+// font-family: 'Freckle Face', cursive;
+// font-family: 'Sue Ellen Francisco', cursive;
+// font-family: 'Creepster', cursive;
+// font-family: 'Trade Winds', cursive;
+// font-family: 'Butcherman', cursive;
 
-/*@keyframes App-logo-spin {
+@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}*/
+}
