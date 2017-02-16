@@ -5,7 +5,7 @@ class Speaker extends PureComponent {
 	render() {
 		return (
 			<div className="speaker" >
-				{`${this.props.text}:`}
+				{this.props.text}
 			</div>
 		)
 	}

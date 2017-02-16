@@ -51,27 +51,38 @@
 }
 
 .speaker {
-  float: left;
-  margin: 4px 16px;
+  background: rgba(85, 97, 78, 1);
+  color: white;
+  border-radius: 10px 10px 0px 0px;
+  width: 200px;
+	float: left;
+	margin-bottom: -4px;
+	height: 32px;
+	padding: 4px;
+	line-height: 34px;
+	font-family: 'Rock Salt', cursive;
+}
+
+.textboxContainer {
+	z-index: 2;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	margin: 8px 8px 20px 8px;
+	max-height: 154px;
+	display: inline-block;
 }
 
 .textbox {
   max-height: 144px;
   width: 99%;
   background: rgba(0, 0, 0, 0.8);
-  border: 2px solid rgba(85, 97, 78, 1);
+  border: 6px solid rgba(85, 97, 78, 1);
   color: white;
-  border-radius: 5px;
-  z-index: 2;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
-  margin: 4px;
-	/*font-family: 'Amatic SC', cursive;*/
-  /*font-family: 'Permanent Marker', cursive;*/
+  border-radius: 0px 10px 10px 10px;
   font-family: 'Rock Salt', cursive;
-  /*font-family: 'Trade Winds', cursive;*/
+	float: left;
 }
 
 .characterImage {
@@ -113,6 +124,8 @@
 
 .gameScreen {
   width: 100%;
+  position: absolute;
+  bottom: 0px;
 }
 
 .App {

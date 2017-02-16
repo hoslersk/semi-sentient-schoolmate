@@ -45,12 +45,12 @@ class TextWindow extends PureComponent {
 
 	render() {
 		return (
-			<div className="textbox" >
+			<div className="textboxContainer">
 				{this.speaker}
-				<Dialogue
-					text={this.updatedText}
-				/>
-				<NextButton action={this.props.action} />
+				<div className="textbox">
+					<Dialogue text={this.updatedText} />
+					<NextButton action={this.props.action} />
+				</div>
 			</div>
 		)
 	}
