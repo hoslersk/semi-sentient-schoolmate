@@ -93,16 +93,15 @@
 }
 
 .dialogue {
-  margin: 40px 8px;
+  margin: 40px 8px 0px 8px;
 }
 
 .nextButton {
-  margin: 24px;
+  margin: 4px;
   width: 80px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+	float: right;
   border-radius: 50px;
+	z-index: 3;
 }
 
 .nextButton:hover {
