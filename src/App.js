@@ -136,8 +136,8 @@ class App extends Component {
 						/>
 					</audio>
 					</div>
+				{this.effect}
 				<div className="gameScreen" >
-					{this.effect}
 					<BackgroundImage source={this.location} />
 					{this.characterImage}
 					<TextWindow
