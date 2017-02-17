@@ -48,7 +48,10 @@ class TextWindow extends PureComponent {
 			<div className="textboxContainer">
 				{this.speaker}
 				<div className="textbox">
-					<Dialogue text={this.updatedText} />
+					<Dialogue
+						quotes={this.props.dialogue[this.props.step].hasOwnProperty('speaker')}
+						text={this.updatedText}
+					/>
 					<NextButton action={this.props.action} />
 				</div>
 			</div>
