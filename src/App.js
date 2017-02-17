@@ -38,7 +38,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		// this.refs.audio.play()
+		this.refs.audio.play()
 	}
 
 	next() {
@@ -115,8 +115,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<div className={`${this.state.language}AppHeader`}>
-					<h1 className="headline">{MENU.title[this.state.language]}</h1>
-					<Language action={this.handleLanguage} value={this.state.language} />
+					{/* <Language action={this.handleLanguage} value={this.state.language} /> */}
 					<NameEntry
 						profile={this.state.profile}
 						updateAction={this.handleProfile}
@@ -125,6 +124,7 @@ class App extends Component {
 						menu={MENU.nameEntry}
 						language={this.state.language}
 					/>
+					<h1 className="headline">{MENU.title[this.state.language]}</h1>
 					<audio ref="audio" className="audio" loop>
 						<source
 							src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"

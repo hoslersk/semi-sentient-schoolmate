@@ -10,6 +10,13 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
+				english: 'Meanwhile, at the library...',
+				japanese: '...',
+			},
+			location: 'library',
+		},
+		{
+			text: {
 				english: 'Still not yet.',
 				japanese: 'まだまだ。',
 			},
