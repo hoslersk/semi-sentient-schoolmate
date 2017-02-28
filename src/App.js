@@ -129,7 +129,9 @@ class App extends Component {
 						menu={MENU.nameEntry}
 						language={this.state.language}
 					/>
+
 					<h1 className="headline">{MENU.title[this.state.language]}</h1>
+
 					<audio ref="audio" className="audio" loop>
 						<source
 							src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"
@@ -141,47 +143,27 @@ class App extends Component {
 						/>
 					</audio>
 					</div>
+
 				{this.effect}
+
 				<div className="gameScreen" >
 					<BackgroundImage source={this.location} />
+
 					{this.characters}
+
 					<TextWindow
 						action={this.next}
 						dialogue={this.dialogue}
 						step={this.state.dialogue}
 						language={this.state.language}
 						profile={this.state.profile}
+						end={DIALOGUE.intro.length === this.state.dialogue + 1}
 					/>
 				</div>
+
 			</div>
 		);
 	}
 }
 
 export default App;
-
-
-// import React from 'react'
-// import { render } from 'react-dom'
-// import { Router, browserHistory } from 'react-router'
-// import { syncHistoryWithStore } from 'react-router-redux'
-// import { Provider } from 'react-redux'
-//
-// import 'react-toolbox/lib/commons.scss'
-// import './root.scss'
-//
-// import configureStore from './store/store'
-// import routes from './routes'
-//
-// const store = configureStore()
-// const history = syncHistoryWithStore(browserHistory, store)
-//
-//
-// localStorage.setItem('initialTarget', window.location.pathname)
-//
-// render(
-// 	<Provider store={store}>
-// 		<Router history={history} routes={routes(store)} />
-// 	</Provider>,
-// 	document.getElementById('app')
-// )

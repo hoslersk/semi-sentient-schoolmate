@@ -43,6 +43,14 @@ class TextWindow extends PureComponent {
 		return this.props.dialogue[this.props.step].text[this.props.language]
 	}
 
+	get nextButton() {
+		if (!this.props.end) {
+			return <NextButton action={this.props.action} />
+		}
+
+		return null	
+	}
+
 	render() {
 		return (
 			<div className="textboxContainer">
@@ -52,7 +60,7 @@ class TextWindow extends PureComponent {
 						quotes={this.props.dialogue[this.props.step].hasOwnProperty('speaker')}
 						text={this.updatedText}
 					/>
-					<NextButton action={this.props.action} />
+					{this.nextButton}
 				</div>
 			</div>
 		)
@@ -65,6 +73,7 @@ TextWindow.propTypes = {
 	step: PropTypes.number,
 	language: PropTypes.string,
 	profile: PropTypes.object,
+	end: PropTypes.bool,
 }
 
 export default TextWindow
