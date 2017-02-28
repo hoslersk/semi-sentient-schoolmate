@@ -3,6 +3,7 @@ import React, { PureComponent, PropTypes } from 'react'
 class Speaker extends PureComponent {
 
 	render() {
+		
 		return (
 			<div className="speaker" >
 				{this.props.text}
@@ -12,7 +13,10 @@ class Speaker extends PureComponent {
 }
 
 Speaker.propTypes = {
-	text: PropTypes.string,
+	text: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.array,
+	]),
 }
 
 export default Speaker

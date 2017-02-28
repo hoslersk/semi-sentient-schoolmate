@@ -90,17 +90,22 @@ class App extends Component {
 		return LOCATION[DIALOGUE.intro[this.state.dialogue].location]
 	}
 
-	get character() {
+	characterImage(character, i) {
+		return 	<Character key={i ? i : 0} data={character} />
+	}
+
+	get characters() {
 		// Will update with addition of chapters/sections
 		if (DIALOGUE.intro[this.state.dialogue].hasOwnProperty('character')) {
-			return CHARACTER[DIALOGUE.intro[this.state.dialogue].character]
+
+			if (Array.isArray(DIALOGUE.intro[this.state.dialogue].character)) {
+				return DIALOGUE.intro[this.state.dialogue].character.map((char, i) => this.characterImage(char, i))
+			}
+
+			return this.characterImage(DIALOGUE.intro[this.state.dialogue].character)
 		}
 
 		return null
-	}
-
-	get characterImage() {
-		return 	<Character source={this.character} />
 	}
 
 	get effect() {
@@ -139,7 +144,7 @@ class App extends Component {
 				{this.effect}
 				<div className="gameScreen" >
 					<BackgroundImage source={this.location} />
-					{this.characterImage}
+					{this.characters}
 					<TextWindow
 						action={this.next}
 						dialogue={this.dialogue}

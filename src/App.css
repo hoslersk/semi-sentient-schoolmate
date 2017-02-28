@@ -95,6 +95,23 @@ body {
   position: absolute;
   right: 0px;
   bottom: 0px;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.characterImageLeft {
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  max-width: 600px;
+  max-height: 600px;
+  /*-moz-transform: scaleX(-1);*/
+  /*-o-transform: scaleX(-1);*/
+  /*-webkit-transform: scaleX(-1);*/
+  transform: scaleX(-1);
+  /*filter: FlipH;*/
+  /*-ms-filter: "FlipH";*/
 }
 
 .dialogue {

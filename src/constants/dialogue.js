@@ -21,10 +21,34 @@ export const DIALOGUE = {
 				japanese: 'まだまだ。',
 			},
 			location: 'library',
-			character: 'Turtle',
+			character: {
+				name: 'Turtle',
+				position: '',
+			},
 			speaker: {
 				english: 'Turtle',
 				japanese: 'カメ',
+			},
+		},
+		{
+			text: {
+				english: 'C\'mon, slowpoke!',
+				japanese: '',
+			},
+			location: 'library',
+			character: [
+				{
+					name: 'Rabbit',
+					position: 'Left',
+				},
+				{
+					name: 'Turtle',
+					position: '',
+				},
+			],
+			speaker: {
+				english: 'Rabbit',
+				japanese: 'ウサギ',
 			},
 		},
 		{
