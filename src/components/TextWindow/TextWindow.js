@@ -27,6 +27,18 @@ class TextWindow extends PureComponent {
 
 	get speaker() {
 		if (this.props.dialogue[this.props.step].hasOwnProperty('speaker')) {
+
+			if (this.props.dialogue[this.props.step].speaker[this.props.language] === 'Player') {
+
+				return (
+					<Speaker
+						name={this.props.profile.firstName}
+						text={this.props.dialogue[this.props.step].speaker[this.props.language]}
+					/>
+				)
+
+			}
+
 			return <Speaker text={this.props.dialogue[this.props.step].speaker[this.props.language]} />
 		}
 
@@ -48,7 +60,7 @@ class TextWindow extends PureComponent {
 			return <NextButton action={this.props.action} />
 		}
 
-		return null	
+		return null
 	}
 
 	render() {

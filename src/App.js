@@ -119,7 +119,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div className={`${this.state.language}AppHeader`}>
+				<div className={`${this.state.language}AppHeader${this.state.dialogue > 0 ? 'Hidden' : ''}`}>
 					{/* <Language action={this.handleLanguage} value={this.state.language} /> */}
 					<NameEntry
 						profile={this.state.profile}

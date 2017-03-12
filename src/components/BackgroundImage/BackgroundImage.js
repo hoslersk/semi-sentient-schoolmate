@@ -2,10 +2,18 @@ import React, { PureComponent, PropTypes } from 'react'
 
 class BackgroundImage extends PureComponent {
 
+	get image() {
+		if (this.props.source) {
+			return (
+				<img src={this.props.source} className="backgroundImage" />
+			)
+		}
+
+		return null
+	}
+
 	render() {
-		return (
-			<img src={this.props.source} className="backgroundImage" />
-		)
+		return this.image
 	}
 }
 
