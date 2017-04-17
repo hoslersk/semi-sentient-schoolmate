@@ -4,19 +4,23 @@ import Dialogue from '../Dialogue/Dialogue'
 import NextButton from '../NextButton/NextButton'
 import Speaker from '../Speaker/Speaker'
 
-import styles from './styles.scss'
+// import styles from './styles.scss'
 
 class TextWindow extends PureComponent {
 
 	get formatDialogue() {
+
 		const dialogueText = this.props.dialogue[this.props.step].text[this.props.language]
 		const nameInsert = this.props.profile.firstName === '' ? '' : this.props.firstName
+
 		if (dialogueText.includes('%FIRST-NAME-END%')) {
 			return dialogueText.replace('%FIRST-NAME-END%', `, ${nameInsert}`)
 		}
+
 		if (dialogueText.includes('%FIRST-NAME%')) {
 			return dialogueText.replace('%FIRST-NAME%', nameInsert)
 		}
+
 		// if (dialogueText.includes('%LAST-NAME-END%')) {
 		// 	return dialogueText.replace('%LAST-NAME-END%', `, ${this.props.profile.lastName}`)
 		// }
@@ -64,18 +68,24 @@ class TextWindow extends PureComponent {
 	}
 
 	render() {
-		return (
-			<div className="textboxContainer">
-				{this.speaker}
-				<div className="textbox">
-					<Dialogue
-						quotes={this.props.dialogue[this.props.step].hasOwnProperty('speaker')}
-						text={this.updatedText}
-					/>
-					{this.nextButton}
+
+		if (this.props.dialogue[this.props.step].text[this.props.language] !== '') {
+
+			return (
+				<div className="textboxContainer">
+					{this.speaker}
+					<div className="textbox">
+						<Dialogue
+							quotes={this.props.dialogue[this.props.step].hasOwnProperty('speaker')}
+							text={this.updatedText}
+						/>
+						{this.nextButton}
+					</div>
 				</div>
-			</div>
-		)
+			)
+		}
+
+		return this.nextButton
 	}
 }
 

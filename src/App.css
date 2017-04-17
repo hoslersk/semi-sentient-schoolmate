@@ -140,14 +140,17 @@ body {
 }
 
 .nextButton {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 32px;
+  color: white;
   width: 80px;
-	position: absolute;
-	bottom: 16px;
-	right: 12px;
+  position: absolute;
+  bottom: 16px;
+  right: 12px;
   border-radius: 50px;
-	z-index: 3;
-	text-align: center;
-	user-select: none;
+  z-index: 3;
+  text-align: center;
+  user-select: none;
 }
 
 .nextButton:hover {

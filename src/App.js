@@ -6,6 +6,7 @@ import TextWindow from './components/TextWindow/TextWindow'
 import Language from './components/Language/Language'
 import NameEntry from './components/NameEntry/NameEntry'
 import Character from './components/Character/Character'
+import VRTest from './components/VRTest'
 
 import { MENU } from './constants/menu'
 import { DIALOGUE } from './constants/dialogue'
@@ -38,7 +39,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.refs.audio.play()
+		// this.refs.audio.play()
 	}
 
 	next() {
@@ -117,6 +118,17 @@ class App extends Component {
 	}
 
 	render() {
+
+		if (DIALOGUE.intro[this.state.dialogue].hasOwnProperty('vr')) {
+			return (
+				<div className="AppVR">
+					<div className={`${this.state.language}AppHeader${this.state.dialogue > 0 ? 'Hidden' : ''}`}>
+						<VRTest />
+					</div>
+				</div>
+			)
+		}
+
 		return (
 			<div className="App">
 				<div className={`${this.state.language}AppHeader${this.state.dialogue > 0 ? 'Hidden' : ''}`}>
@@ -132,7 +144,7 @@ class App extends Component {
 
 					<h1 className="headline">{MENU.title[this.state.language]}</h1>
 
-					<audio ref="audio" className="audio" loop>
+					<audio ref="audio" className="audio" loop autoPlay>
 						<source
 							src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"
 							type="audio/ogg"

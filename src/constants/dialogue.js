@@ -2,7 +2,7 @@ export const DIALOGUE = {
 	intro: [
 		{
 			text: {
-				english: 'Thank you for coming to our Open House. Please sign your first and last name in the top left and click on \'Enroll\' once you\'re satisfied. You may then click \'Next\' at the bottom right to continue.',
+				english: 'Thank you for coming to our Open House. Please sign your first and last name in the top left corner and click on \'Enroll\' once you\'re satisfied. You may then click \'Next\' in the bottom right corner to continue.',
 				japanese: '...',
 			},
 			location: 'stairs',
@@ -24,6 +24,21 @@ export const DIALOGUE = {
 				japanese: '???',
 			},
 		},
+		// {
+		// 	vr: 'test',
+		// 	text: {
+		// 		english: '',
+		// 		japanese: '',
+		// 	},
+		// 	location: 'stairs',
+		// },
+		// {
+		// 	text: {
+		// 		english: '',
+		// 		japanese: '',
+		// 	},
+		// 	location: 'stairs',
+		// },
 		{
 			text: {
 				english: 'Descending down the stairs into a dark entryway, you find the front door to be wide open. Taped to the door is a handmade sign with the standard clip art you\'ve come to expect from faculty members. More importantly, the sign reads "Open House" in Comic Sans font.',
@@ -41,7 +56,7 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
-				english: 'One of the nearest doors has a placard labeled "Library" just below typical eye level. The door is closed, but this is a "self-guided" tour. Gently jiggling the doorknob reveals that the door is unlocked...',
+				english: 'One of the nearest doors has a placard labeled "Library" just below typical eye level. The door is closed, but you see light escaping from below the door. Gently jiggling the doorknob reveals that the door is unlocked...',
 				japanese: '...',
 			},
 			location: 'hallway',
@@ -69,7 +84,14 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
-				english: 'There\'s a classroom just down the hall with the door open...',
+				english: 'Well, where to next?',
+				japanese: '...',
+			},
+			location: 'hallway',
+		},
+		{
+			text: {
+				english: 'There\'s a classroom just down the hall with the door open. Seems like the obvious choice.',
 				japanese: '...',
 			},
 			location: 'hallway',
