@@ -23,17 +23,6 @@ class AppHeader extends PureComponent {
 				/>
 
 				<h1 className="headline">{MENU.title[this.props.language]}</h1>
-
-				<audio ref="audio" className="audio" loop>
-					<source
-						src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"
-						type="audio/ogg"
-					/>
-					<source
-						src="https://ia802205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.mp3"
-						type="audio/mpeg"
-					/>
-				</audio>
 			</div>
 		)
 	}

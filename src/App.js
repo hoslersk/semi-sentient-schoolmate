@@ -4,6 +4,7 @@ import logo from './CicadaHusk.jpg'
 import AppHeader from './components/AppHeader/AppHeader'
 import GameScreen from './components/GameScreen/GameScreen'
 import Effects from './components/Effects/Effects'
+import Audio from './components/Audio/Audio'
 import VRTest from './components/VRTest'
 
 import { DIALOGUE } from './constants/dialogue'
@@ -117,6 +118,7 @@ class App extends Component {
 					language={this.state.language}
 					profile={this.state.profile}
 				/>
+				<Audio />
 			</div>
 		);
 	}
