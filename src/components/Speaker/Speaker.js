@@ -1,5 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react'
 
+import './styles.sass'
+
 class Speaker extends PureComponent {
 
 	get text() {

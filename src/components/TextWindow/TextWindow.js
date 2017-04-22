@@ -4,7 +4,7 @@ import Dialogue from '../Dialogue/Dialogue'
 import NextButton from '../NextButton/NextButton'
 import Speaker from '../Speaker/Speaker'
 
-// import styles from './styles.scss'
+import './styles.sass'
 
 class TextWindow extends PureComponent {
 

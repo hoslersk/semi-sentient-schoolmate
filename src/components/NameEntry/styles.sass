@@ -1,0 +1,72 @@
+@mixin name-entry-button
+  font-size: 12px
+  border-radius: 50px
+  padding: 4px 8px
+  float: left
+  user-select: none
+
+.nameEntry
+  z-index: 3
+  float: left
+  margin: 16px
+  display: inline-block
+  width: 300px
+
+.textInput
+  font-family: 'Rock Salt', cursive
+  float: left
+  background: rgba(0, 0, 0, 0.8)
+  color: rgb(187, 10, 30)
+  border: 2px solid rgba(85, 97, 78, 1)
+  text-align: center
+  height: 31px
+
+.nameInputs
+  float: left
+  display: inline-block
+  width: 140px
+
+.enrollButton
+  @include name-entry-button
+  margin-left: 32px
+  width: 60px
+
+.enrollButton:hover
+  background: rgba(255, 255, 255, 0.1)
+  cursor: pointer
+
+.dropOutButton
+  @include name-entry-button
+  width: 80px
+  margin-left: 24px
+
+.dropOutButton:hover
+  @extend .enrollButton:hover
+
+@media screen and (max-width: 900px)
+  .nameEntry
+    float: none
+    width: 100%
+    margin: 0px 48px
+  .nameInputs
+    width: 50%
+  .enrollButton
+    width: 20%
+    margin: 0px
+  .dropOutButton
+    width: 20%
+    margin: 0px
+
+@media screen and (max-width: 600px)
+  .nameEntry
+    float: none
+    width: 100%
+    margin: 0px 32px
+  .nameInputs
+    width: 50%
+  .enrollButton
+    width: 30%
+    margin: 0px
+  .dropOutButton
+    width: 30%
+    margin: 0px

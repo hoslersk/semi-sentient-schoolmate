@@ -1,0 +1,43 @@
+@mixin effects-base($name, $z-index, $loops, $duration)
+  animation-name: $name
+  z-index: $z-index
+  animation-iteration-count: $loops
+  animation-duration: $duration
+  width: 100%
+  height: 100%
+  position: absolute
+  left: 0px
+  right: 0px
+  top: 0px
+  bottom: 0px
+
+@keyframes lighteffect
+  0%
+    background-color: rgba(255, 255, 255, .1)
+  25%
+    background-color: rgba(255, 255, 255, .2)
+  50%
+    background-color: rgba(255, 255, 255, .03)
+  75%
+    background-color: rgba(255, 255, 255, .16)
+  100%
+    background-color: rgba(255, 255, 255, .05)
+
+@keyframes fadeout
+  0%
+    background: rgba(0, 0, 0, .5)
+  25%
+    background: rgba(0, 0, 0, .7)
+  50%
+    background: rgba(0, 0, 0, .5)
+  75%
+    background: rgba(0, 0, 0, .8)
+  100%
+    background: rgba(0, 0, 0, 1)
+
+.lighteffect
+  @include effects-base(lighteffect, 1, infinite, 13s)
+
+.fadeout
+  @include effects-base(fadeout, 2, 1, 5s)
+  background-color: black

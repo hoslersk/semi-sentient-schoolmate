@@ -2,6 +2,8 @@ import React, { PureComponent, PropTypes } from 'react'
 
 import { CHARACTER } from '../../constants/character'
 
+import './styles.sass'
+
 class Character extends PureComponent {
 
 	render() {

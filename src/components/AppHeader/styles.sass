@@ -1,0 +1,51 @@
+@mixin app-header-base
+  background-color: rgba(0, 0, 0, 0.8)
+  z-index: 2
+  color: rgba(187, 10, 30, 1)
+  position: absolute
+  top: 0px
+  right: 0px
+  left: 0px
+  padding: 6px
+
+.englishAppHeader
+  @include app-header-base
+  font-family: 'Rock Salt', cursive
+
+.englishAppHeaderHidden
+  @extend .englishAppHeader
+  opacity: 0
+
+.englishAppHeaderHidden:hover
+  opacity: 1
+
+.japaneseAppHeader
+  @include app-header-base
+  font-family: 'Noto Sans Japanese', serif
+  font-weight: 200
+  font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif
+
+.headline
+  line-height: 60px
+  position: relative
+  font-size: 32px
+  left: 0
+  right: 0
+  margin: 16px auto
+  width: 50%
+
+@media screen and (max-width: 900px)
+  .headline
+    font-size: 24px
+    width: 100%
+    margin: 0px
+  .englishAppHeaderHidden
+    opacity: 1
+
+@media screen and (max-width: 600px)
+  .headline
+    font-size: 18px
+    width: 100%
+    margin: 0px
+  .englishAppHeaderHidden
+    opacity: 1

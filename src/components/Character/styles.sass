@@ -1,0 +1,25 @@
+@mixin character-image
+  z-index: 1
+  position: absolute
+  bottom: 100px
+  max-width: 600px
+  max-height: 600px
+
+.characterImage
+  @include character-image
+  right: 0px
+
+.characterImageLeft
+  @include character-image
+  left: 0px
+  transform: scaleX(-1)
+
+@media screen and (max-width: 900px)
+  .characterImage, .characterImageLeft
+    max-width: 40%
+    bottom: 25%
+
+@media screen and (max-width: 400px)
+  .characterImage, .characterImageLeft
+    max-width: 40%
+    bottom: 40%

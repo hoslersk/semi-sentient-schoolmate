@@ -1,24 +1,20 @@
-import React, { Component } from 'react';
-import logo from './CicadaHusk.jpg';
+import React, { Component } from 'react'
+import logo from './CicadaHusk.jpg'
 
-import BackgroundImage from './components/BackgroundImage/BackgroundImage'
-import TextWindow from './components/TextWindow/TextWindow'
-import Language from './components/Language/Language'
-import NameEntry from './components/NameEntry/NameEntry'
-import Character from './components/Character/Character'
+import AppHeader from './components/AppHeader/AppHeader'
+import GameScreen from './components/GameScreen/GameScreen'
+import Effects from './components/Effects/Effects'
 import VRTest from './components/VRTest'
 
-import { MENU } from './constants/menu'
 import { DIALOGUE } from './constants/dialogue'
-import { LOCATION } from './constants/location'
-import { CHARACTER } from './constants/character'
 
-import './App.css';
+import './App.sass'
 
 class App extends Component {
 
 	constructor(props) {
 		super(props)
+
 		const initialState =  {
 			profile: {
 				firstName: '',
@@ -39,7 +35,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		// this.refs.audio.play()
+		this.refs.audio.play()
 	}
 
 	next() {
@@ -81,37 +77,9 @@ class App extends Component {
 		localStorage.setItem('semisen', JSON.stringify(this.state))
 	}
 
-	get dialogue() {
-		// Will update with addition of chapters/sections
-		return DIALOGUE.intro
-	}
-
-	get location() {
-		// Will update with addition of chapters/sections
-		return LOCATION[DIALOGUE.intro[this.state.dialogue].location]
-	}
-
-	characterImage(character, i) {
-		return 	<Character key={i ? i : 0} data={character} />
-	}
-
-	get characters() {
-		// Will update with addition of chapters/sections
-		if (DIALOGUE.intro[this.state.dialogue].hasOwnProperty('character')) {
-
-			if (Array.isArray(DIALOGUE.intro[this.state.dialogue].character)) {
-				return DIALOGUE.intro[this.state.dialogue].character.map((char, i) => this.characterImage(char, i))
-			}
-
-			return this.characterImage(DIALOGUE.intro[this.state.dialogue].character)
-		}
-
-		return null
-	}
-
-	get effect() {
+	get effects() {
 		if (DIALOGUE.intro[this.state.dialogue].hasOwnProperty('effect')) {
-			return <span className={DIALOGUE.intro[this.state.dialogue].effect} />
+			return <Effects type={DIALOGUE.intro[this.state.dialogue].effect} />
 		}
 
 		return null
@@ -131,48 +99,23 @@ class App extends Component {
 
 		return (
 			<div className="App">
-				<div className={`${this.state.language}AppHeader${this.state.dialogue > 0 ? 'Hidden' : ''}`}>
-					{/* <Language action={this.handleLanguage} value={this.state.language} /> */}
-					<NameEntry
-						profile={this.state.profile}
-						updateAction={this.handleProfile}
-						enrollAction={this.enroll}
-						dropOutAction={this.dropOut}
-						menu={MENU.nameEntry}
-						language={this.state.language}
-					/>
+				<AppHeader
+					language={this.state.language}
+					profile={this.state.profile}
+					dialogue={this.state.dialogue}
+					updateAction={this.handleProfile}
+					enrollAction={this.enroll}
+					dropOutAction={this.dropOut}
+				/>
 
-					<h1 className="headline">{MENU.title[this.state.language]}</h1>
+				{this.effects}
 
-					<audio ref="audio" className="audio" loop autoPlay>
-						<source
-							src="https://ia902205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.ogg"
-							type="audio/ogg"
-						/>
-						<source
-							src="https://ia802205.us.archive.org/26/items/BeethovenSymphonyNo.7_807/02_Beethoven_Sym_No.7_m2.mp3"
-							type="audio/mpeg"
-						/>
-					</audio>
-					</div>
-
-				{this.effect}
-
-				<div className="gameScreen" >
-					<BackgroundImage source={this.location} />
-
-					{this.characters}
-
-					<TextWindow
-						action={this.next}
-						dialogue={this.dialogue}
-						step={this.state.dialogue}
-						language={this.state.language}
-						profile={this.state.profile}
-						end={DIALOGUE.intro.length === this.state.dialogue + 1}
-					/>
-				</div>
-
+				<GameScreen
+					next={this.next}
+					step={this.state.dialogue}
+					language={this.state.language}
+					profile={this.state.profile}
+				/>
 			</div>
 		);
 	}

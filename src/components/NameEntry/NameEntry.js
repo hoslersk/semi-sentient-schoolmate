@@ -1,5 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react'
 
+import './styles.sass'
+
 class NameEntry extends PureComponent {
 
 	constructor(props) {
@@ -9,6 +11,7 @@ class NameEntry extends PureComponent {
 	}
 
 	handleChange(event) {
+		debugger
 		this.props.updateAction(event)
 	}
 
