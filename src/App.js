@@ -73,6 +73,7 @@ class App extends Component {
 			dialogue: 0,
 			language: 'english',
 		}
+
 		this.setState(initialState)
 		localStorage.setItem('semisen', JSON.stringify(this.state))
 	}
@@ -121,4 +122,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default App
