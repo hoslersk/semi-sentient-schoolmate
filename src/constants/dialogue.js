@@ -6,7 +6,8 @@ export const DIALOGUE = {
 				japanese: 'オープンハウスに来てくれてありがとうございました。左上隅に名前を入力して、『入学する』というボタンをクリックして下さい。『入学』した時、右下隅に『続く』というボタンをクリックして下さい。',
 			},
 			location: 'stairs',
-			effect: 'lighteffect',
+			// effect: 'lighteffect',
+			effect: 'invert',
 			speaker: {
 				english: '???',
 				japanese: '???',
@@ -154,6 +155,14 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
+				english: '...!',
+				japanese: '...!',
+			},
+			effect: 'invert',
+			location: 'classroom',
+		},
+		{
+			text: {
 				english: 'Suddenly a rush of nausea rushes over your body and you feel light-headed. This isn\'t good... gotta get some fresh air...',
 				japanese: '...',
 			},
@@ -244,7 +253,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'W-what?!',
-				japanese: '',
+				japanese: 'な、何だっと？！',
 			},
 			location: 'swings',
 			character: {
@@ -259,7 +268,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'They\'re not quite ready for you. We\'ll have to ask you to wait patiently.',
-				japanese: '...',
+				japanese: 'まだ準備してる。',
 			},
 			location: 'swings',
 			character: {
@@ -274,7 +283,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'Confusion swirls around in your head. Is this a byproduct of the lack of oxygen I\'m getting to you my brain?',
-				japanese: '',
+				japanese: '...',
 			},
 			location: 'swings',
 			character: {
@@ -296,7 +305,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'Just then... out of the corner of my left eye...',
-				japanese: '',
+				japanese: '...',
 			},
 			location: 'swings',
 			character: [
@@ -313,7 +322,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'What\'s his problem?',
-				japanese: '',
+				japanese: '...',
 			},
 			location: 'swings',
 			character: [
@@ -334,7 +343,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: '...?!',
-				japanese: '',
+				japanese: '...?!',
 			},
 			location: 'swings',
 			character: [
@@ -351,7 +360,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'I\'m losing it... and I\'m fading fast... I don\'t care if I\'m halucinating. I have to act fast.',
-				japanese: '',
+				japanese: '...',
 			},
 			location: 'swings',
 			character: [
@@ -368,7 +377,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'Help... I... I need oxygen... can\'t... br... breathe...',
-				japanese: '',
+				japanese: 'た…　助けて…　くれ…',
 			},
 			location: 'swings',
 			character: [
@@ -389,7 +398,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'No... I\'m afraid your problem is quite the contrary.',
-				japanese: '',
+				japanese: '...',
 			},
 			location: 'swings',
 			character: [
@@ -410,7 +419,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'Hah! I guess this one just needs to simmer a little longer. Nighty night!',
-				japanese: '',
+				japanese: '...',
 			},
 			location: 'swings',
 			character: [
@@ -431,7 +440,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'Everything begins to go dark as you fade into a deep sleep...',
-				japanese: '',
+				japanese: '...',
 			},
 			location: 'swings',
 			character: [
