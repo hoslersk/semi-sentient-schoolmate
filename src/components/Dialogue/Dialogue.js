@@ -16,7 +16,7 @@ class Dialogue extends PureComponent {
 		}
 
 		return (
-			<div className="dialogue" >
+			<div className={`dialogue-${this.props.language === 'japanese' ? 'jp' : 'en'}`} >
 				{this.props.text}
 			</div>
 		)

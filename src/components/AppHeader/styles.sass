@@ -15,7 +15,7 @@
   @extend .englishAppHeader
   opacity: 0
 
-.englishAppHeaderHidden:hover
+.englishAppHeaderHidden:hover, .japaneseAppHeaderHidden:hover
   opacity: 1
 
 .japaneseAppHeader
@@ -29,6 +29,13 @@
   left: 0
   right: 0
   bottom: 80%
+
+.japaneseAppHeaderHidden
+  @extend .japaneseAppHeader
+  opacity: 0
+
+.japaneseAppHeaderHidden:after
+  @extend .japaneseAppHeader:after
 
 .headline
   line-height: 60px

@@ -41,7 +41,7 @@ export const DIALOGUE = {
 		// },
 		{
 			text: {
-				english: 'Descending down the stairs into a dark entryway, you find the front door to be wide open. Taped to the door is a handmade sign with the standard clip art you\'ve come to expect from faculty members. More importantly, the sign reads "Open House" in Comic Sans font.',
+				english: 'Descending down the stairs into a dark entryway, you find the front door to be wide open. Taped to the door is a handmade sign with the standard clip art you\'ve come to expect from school faculty members. More importantly, the sign reads "Open House" in Comic Sans font.',
 				japanese: '...',
 			},
 			location: 'stairs',
@@ -56,10 +56,24 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
-				english: 'One of the nearest doors has a placard labeled "Library" just below typical eye level. The door is closed, but you see light escaping from below the door. Gently jiggling the doorknob reveals that the door is unlocked...',
+				english: 'One of the nearest doors has a placard labeled "Library" just below typical eye level. The door is closed, but you see light escaping from below the door. Gently jiggling the doorknob reveals that the door is unlocked.',
 				japanese: '...',
 			},
 			location: 'hallway',
+		},
+		{
+			text: {
+				english: '',
+				japanese: '',
+			},
+			location: 'hallway',
+		},
+		{
+			text: {
+				english: '',
+				japanese: '',
+			},
+			location: 'library',
 		},
 		{
 			text: {
@@ -77,7 +91,14 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
-				english: 'The lighting (or lack thereof) in the hallways really doesn\'t seem OK. Budget cuts? No... that wouldn\'t explain the library.',
+				english: 'The lighting (or lack thereof) in the hallways is a bit unsettling, especially given the absence of anyone else around. School\'s not currently in session, so it makes sense that they would want to conserve electricity.',
+				japanese: '...',
+			},
+			location: 'hallway',
+		},
+		{
+			text: {
+				english: '...',
 				japanese: '...',
 			},
 			location: 'hallway',
@@ -91,21 +112,42 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
-				english: 'There\'s a classroom just down the hall with the door open. Seems like the obvious choice.',
+				english: 'There\'s a room just down the hall with the door open. Seems like the obvious choice.',
 				japanese: '...',
 			},
 			location: 'hallway',
 		},
 		{
 			text: {
-				english: 'Looks like a math class was last held here, by the looks of it on the chalkboard. That or we\'ve got a Goodwill Hunting situation here with the janitor.',
+				english: '',
+				japanese: '',
+			},
+			location: 'hallway',
+		},
+		{
+			text: {
+				english: '',
+				japanese: '',
+			},
+			location: 'classroom',
+		},
+		{
+			text: {
+				english: 'This is definitely a classroom... safe to say it\'s seen better days.',
 				japanese: '...',
 			},
 			location: 'classroom',
 		},
 		{
 			text: {
-				english: 'A label on the desk next to the chalkboard says "Octavia"... you\'d normally expect a teacher\'s nametag to say "Mr.," "Mrs.," "Ms.," or "Miss" followed by a last name. Seems pretty casual.',
+				english: 'Seems like a math class was last held here, by the looks of it on the chalkboard. Well, that or a brilliant janitor solving complicated equations overnight.',
+				japanese: '...',
+			},
+			location: 'classroom',
+		},
+		{
+			text: {
+				english: 'A label on the desk next to the chalkboard says "Octavia"... you\'d normally expect a teacher\'s nametag to say "Mr.," "Mrs.," "Ms.," or "Miss" followed by a last name. Seems pretty... casual.',
 				japanese: '...',
 			},
 			location: 'classroom',
@@ -119,10 +161,31 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
+				english: '',
+				japanese: '',
+			},
+			location: 'classroom',
+		},
+		{
+			text: {
+				english: '',
+				japanese: '',
+			},
+			location: 'hallway',
+		},
+		{
+			text: {
 				english: 'You stumble down the hallway trying to find the nearest exit. Following the source of natural light leads you to a back door...',
 				japanese: '...',
 			},
 			location: 'hallway',
+		},
+		{
+			text: {
+				english: '',
+				japanese: '',
+			},
+			location: 'swings',
 		},
 		{
 			text: {
@@ -133,21 +196,28 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
-				english: 'Keeping your eyes fixated on the swings, you take slow, deliberate breaths. Your current condition doesn\'t appear to be improving... and then...',
+				english: 'Keeping your eyes fixated on the swings, you take slow, deliberate breaths. Your current condition doesn\'t appear to be improving...',
 				japanese: '...',
 			},
 			location: 'swings',
 		},
 		{
 			text: {
-				english: 'You see a turtle crawling just beside you. Where did it come from...?',
+				english: 'Through the sound of your own breathing, you faintly hear a shuffling sound to your right.',
 				japanese: '...',
 			},
 			location: 'swings',
 		},
 		{
 			text: {
-				english: 'You see a turtle crawling just beside you. Where did it come from...?',
+				english: 'Turning your head slightly, you see that the source of the sound is coming from a turtle.',
+				japanese: '...',
+			},
+			location: 'swings',
+		},
+		{
+			text: {
+				english: 'Turning your head slightly, you see that the source of the sound is coming from a turtle.',
 				japanese: '...',
 			},
 			location: 'swings',
@@ -222,6 +292,23 @@ export const DIALOGUE = {
 				name: 'Turtle',
 				position: '',
 			},
+		},
+		{
+			text: {
+				english: 'Just then... out of the corner of my left eye...',
+				japanese: '',
+			},
+			location: 'swings',
+			character: [
+				{
+					name: 'Rabbit',
+					position: 'Left',
+				},
+				{
+					name: 'Turtle',
+					position: '',
+				},
+			],
 		},
 		{
 			text: {
@@ -371,7 +458,27 @@ export const DIALOGUE = {
 		},
 		{
 			text: {
-				english: 'We hope to have better success next time.',
+				english: 'Perhaps a different outcome will become possible in the near future.',
+				japanese: '...',
+			},
+			speaker: {
+				english: '???',
+				japanese: '???',
+			},
+		},
+		{
+			text: {
+				english: '...',
+				japanese: '...',
+			},
+			speaker: {
+				english: '???',
+				japanese: '???',
+			},
+		},
+		{
+			text: {
+				english: '...Good-bye.',
 				japanese: '...',
 			},
 			speaker: {
