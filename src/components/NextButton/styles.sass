@@ -1,15 +1,27 @@
+@keyframes button-hover
+  from
+    transform: perspective(100px) rotateX(-20deg) translateY(10px) translateZ(20px)
+  to
+    transform: perspective(100px) rotateX(20deg) translateY(10px) translateZ(20px)
+
 .nextButton
   font-family: 'Fjalla One', sans-serif
   font-size: 32px
   color: white
   width: 80px
   position: absolute
-  bottom: 16px
-  right: 12px
-  border-radius: 50px
+  bottom: 32px
+  right: 32px
   z-index: 3
   text-align: center
   user-select: none
+  transition-timing-function: cubic-bezier(0, 0, 1, 2.19)
+  background: white
+  background: linear-gradient(to top,  #000000 0%,#EFEFEF 100%)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14)
+  animation-name: button-hover
+  animation-iteration-count: infinite
+  animation-duration: 1s
 
 .nextButton:hover
   cursor: pointer

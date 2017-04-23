@@ -1,7 +1,7 @@
 export const MENU = {
 	title: {
 		english: 'Semi-Sentient Schoolmate',
-		japanese: '蝉・センティエント・スクールメート',
+		japanese: 'Semi-Sentient Schoolmate',
 	},
 	nameEntry: {
 		header: {

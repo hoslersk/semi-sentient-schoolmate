@@ -9,7 +9,7 @@ class Dialogue extends PureComponent {
 			const openQuote = this.props.language === 'japanese' ? '「' : '"'
 			const endQuote = this.props.language === 'japanese' ? '」' : '"'
 			return (
-				<div className="dialogue" >
+				<div className={`dialogue-${this.props.language === 'japanese' ? 'jp' : 'en'}`} >
 					{`${openQuote}${this.props.text}${endQuote}`}
 				</div>
 			)

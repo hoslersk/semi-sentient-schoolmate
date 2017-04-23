@@ -1,2 +1,14 @@
-.dialogue
-  margin: 40px 40px 0px 40px
+.dialogue-en
+  margin: 24px 24px 0px 24px
+
+.dialogue-jp
+  @extend .dialogue-en
+  font-size: 28px
+
+@media screen and (max-width: 900px)
+  .dialogue-jp
+    font-size: 22px
+
+@media screen and (max-width: 600px)
+  .dialogue-jp
+    font-size: 16px
