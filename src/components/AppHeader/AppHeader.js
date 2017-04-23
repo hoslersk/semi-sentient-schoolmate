@@ -3,6 +3,7 @@ import React, { PureComponent, PropTypes } from 'react'
 import { MENU } from '../../constants/menu'
 
 import NameEntry from '../NameEntry/NameEntry'
+import Language from '../Language/Language'
 
 import './styles.sass'
 
@@ -12,7 +13,7 @@ class AppHeader extends PureComponent {
 
 		return (
 			<div className={`${this.props.language}AppHeader${this.props.dialogue > 0 ? 'Hidden' : ''}`}>
-				{/* <Language action={this.handleLanguage} value={this.state.language} /> */}
+				<Language action={this.props.handleLanguage} value={this.props.language} />
 				<NameEntry
 					profile={this.props.profile}
 					updateAction={this.props.updateAction}
@@ -33,6 +34,7 @@ AppHeader.propTypes = {
 	updateAction: PropTypes.func,
 	enrollAction: PropTypes.func,
 	dropOutAction: PropTypes.func,
+	handleLanguage: PropTypes.func,
 	language: PropTypes.string,
 	dialogue: PropTypes.number,
 }

@@ -6,7 +6,8 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -120,6 +121,36 @@ module.exports = {
         include: paths.appSrc,
         loaders: ["style", "css", "sass"]
       },
+      // {
+      //   test: /(\.sass|\.css)$/,
+      //   loader: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: [
+      //       {
+      //         loader: 'css-loader',
+      //         options: {
+      //           modules: true,
+      //           sourceMap: true,
+      //           importLoaders: 1,
+      //           localIdentName: '[name]__[local]___[hash:base64:5]',
+      //         },
+      //       },
+      //       {
+      //         loader: 'postcss-loader',
+      //         options: {
+      //           plugins: [autoprefixer],
+      //         },
+      //       },
+      //       {
+      //         loader: 'sass-loader',
+      //         options: {
+      //           data: '@import "./src/styles/_theme.sass";',
+      //           includePaths: [path.resolve(__dirname, './src/')],
+      //         },
+      //       },
+      //     ],
+      //   }),
+      // },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,

@@ -3,7 +3,7 @@ export const DIALOGUE = {
 		{
 			text: {
 				english: 'Thank you for coming to our Open House. Please sign your first and last name in the top left corner and click on \'Enroll\' once you\'re satisfied. You may then click \'Next\' in the bottom right corner to continue.',
-				japanese: '...',
+				japanese: 'オープンハウスに来てくれてありがとうございました。左上隅に名前を入力して、『入学する』というボタンをクリックして下さい。『入学』した時、右下隅に『続く』というボタンをクリックして下さい。',
 			},
 			location: 'stairs',
 			effect: 'lighteffect',

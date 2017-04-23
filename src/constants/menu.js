@@ -24,5 +24,11 @@ export const MENU = {
 			english: 'Drop Out',
 			japanese: '中退する',
 		},
-	}
+	},
+	button: {
+		nextButton: {
+			english: 'Next',
+			japanese: '続く',
+		},
+	},
 }

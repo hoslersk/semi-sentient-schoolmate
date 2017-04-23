@@ -6,9 +6,11 @@ class Dialogue extends PureComponent {
 
 	render() {
 		if (this.props.quotes) {
+			const openQuote = this.props.language === 'japanese' ? '「' : '"'
+			const endQuote = this.props.language === 'japanese' ? '」' : '"'
 			return (
 				<div className="dialogue" >
-					{`"${this.props.text}"`}
+					{`${openQuote}${this.props.text}${endQuote}`}
 				</div>
 			)
 		}
@@ -24,6 +26,7 @@ class Dialogue extends PureComponent {
 Dialogue.propTypes = {
 	text: PropTypes.string,
 	quotes: PropTypes.bool,
+	language: PropTypes.string,
 }
 
 export default Dialogue

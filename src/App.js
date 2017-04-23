@@ -35,10 +35,6 @@ class App extends Component {
 		this.dropOut = this.dropOut.bind(this)
 	}
 
-	componentDidMount() {
-		this.refs.audio.play()
-	}
-
 	next() {
 		if (DIALOGUE.intro.length > this.state.dialogue + 1) {
 			this.setState({dialogue: this.state.dialogue + 1})
@@ -108,6 +104,7 @@ class App extends Component {
 					updateAction={this.handleProfile}
 					enrollAction={this.enroll}
 					dropOutAction={this.dropOut}
+					handleLanguage={this.handleLanguage}
 				/>
 
 				{this.effects}

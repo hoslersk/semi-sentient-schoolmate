@@ -3,6 +3,7 @@ import React, { PureComponent, PropTypes } from 'react'
 import Dialogue from '../Dialogue/Dialogue'
 import NextButton from '../NextButton/NextButton'
 import Speaker from '../Speaker/Speaker'
+import { MENU } from '../../constants/menu'
 
 import './styles.sass'
 
@@ -61,7 +62,12 @@ class TextWindow extends PureComponent {
 
 	get nextButton() {
 		if (!this.props.end) {
-			return <NextButton action={this.props.action} />
+			return (
+				<NextButton
+					action={this.props.action}
+					text={MENU.button.nextButton[this.props.language]}
+				/>
+			)
 		}
 
 		return null
@@ -78,6 +84,7 @@ class TextWindow extends PureComponent {
 						<Dialogue
 							quotes={this.props.dialogue[this.props.step].hasOwnProperty('speaker')}
 							text={this.updatedText}
+							language={this.props.language}
 						/>
 						{this.nextButton}
 					</div>
