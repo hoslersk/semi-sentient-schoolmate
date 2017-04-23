@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "node-sass": "^2.0.1",
+    "node-sass": "^4.5.2",
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.1.1",
     "style-loader": "0.13.1",
@@ -51,13 +51,12 @@
     "aframe-particle-system-component": "^1.0.9",
     "aframe-react": "^4.1.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "node-sass": "^2.0.1"
+    "react-dom": "^15.4.2"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "npm install --only=dev && npm install && npm run build",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
