@@ -6,8 +6,7 @@ export const DIALOGUE = {
 				japanese: 'オープンハウスに来てくれてありがとうございました。左上隅に名前を入力して、『入学する』というボタンをクリックして下さい。『入学』した時、右下隅に『続く』というボタンをクリックして下さい。',
 			},
 			location: 'stairs',
-			// effect: 'lighteffect',
-			effect: 'invert',
+			effect: 'lighteffect',
 			speaker: {
 				english: '???',
 				japanese: '???',
@@ -158,7 +157,7 @@ export const DIALOGUE = {
 				english: '...!',
 				japanese: '...!',
 			},
-			effect: 'invert',
+			effect: 'red',
 			location: 'classroom',
 		},
 		{

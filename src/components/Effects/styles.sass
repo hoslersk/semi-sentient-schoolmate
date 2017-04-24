@@ -35,9 +35,19 @@
   100%
     background: rgba(0, 0, 0, 1)
 
+@keyframes red
+  from
+    background: rgba(255, 0, 0, 1)
+  to
+    background: rgba(255, 0, 0, 0)
+
 .lighteffect
   @include effects-base(lighteffect, 1, infinite, 13s)
 
 .fadeout
   @include effects-base(fadeout, 2, 1, 5s)
   background-color: black
+
+.red
+  @include effects-base(red, 1, 1, 3s)
+  transition-timing-function: cubic-bezier(0, 0, 1, 2.19)
