@@ -1,3 +1,13 @@
+@keyframes speaker-box
+  from
+    height: 0px
+    opacity: 0
+    overflow: hidden
+  to
+    height: 48px
+    opacity: 1
+    overflow: hidden
+
 .speaker
   background: rgba(85, 97, 78, 1)
   color: white
@@ -8,6 +18,9 @@
   height: 48px
   padding: 4px
   line-height: 56px
-  // font-family: 'Rock Salt', cursive
   font-family: 'Fjalla One', sans-serif
   font-size: 36px
+  animation-name: speaker-box
+  animation-iteration-count: 1
+  animation-duration: .7s
+  animation-timing-function: cubic-bezier(0, 0, 0.22, 2.28)

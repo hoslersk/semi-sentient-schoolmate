@@ -9,6 +9,28 @@ import './styles.sass'
 
 class TextWindow extends PureComponent {
 
+	constructor(props) {
+		super(props)
+
+		this.state = { text: '' }
+
+		// this.updateState = this.updateState.bind(this)
+	}
+
+	// componentDidMount() {
+	// 	this.printLetterByLetter(this.updateState)
+	// }
+	//
+	// componentWillUpdate() {
+	// 	if (
+	// 		this.props.dialogue[this.props.step].text[this.props.language] &&
+	// 		this.state.text === this.props.dialogue[this.props.step].text[this.props.language]
+	// 	) {
+	// 		this.setState({ text: '' })
+	// 		this.printLetterByLetter(this.updateState)
+	// 	}
+	// }
+
 	get formatDialogue() {
 
 		const dialogueText = this.props.dialogue[this.props.step].text[this.props.language]
@@ -72,6 +94,23 @@ class TextWindow extends PureComponent {
 
 		return null
 	}
+
+	// updateState(index, string) {
+	// 	this.setState({ text: string.slice(0, index) })
+	// }
+	//
+	// printLetterByLetter(method){
+	// 	var i = 0;
+	// 	const text = this.props.dialogue[this.props.step].text[this.props.language]
+	// 	var interval = setInterval(function(){
+	// 		method(i, text)
+	// 		i++;
+	// 		if (i > text.length){
+	// 			clearInterval(interval);
+	// 		}
+	//
+	// 	}, 30);
+	// }
 
 	render() {
 

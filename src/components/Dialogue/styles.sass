@@ -1,5 +1,17 @@
+@keyframes dialogue
+  0%
+    text-shadow: -2px 2px 2px rgba(255, 255, 255, .5)
+  50%
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, .5)
+  100%
+    text-shadow: -2px 2px 2px rgba(255, 255, 255, .5)
+
 .dialogue-en
   margin: 24px 24px 0px 24px
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, .5)
+  animation-name: dialogue
+  animation-iteration-count: infinite
+  animation-duration: 5s
 
 .dialogue-jp
   @extend .dialogue-en
