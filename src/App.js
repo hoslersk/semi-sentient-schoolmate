@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './CicadaHusk.jpg'
+// import logo from './CicadaHusk.jpg'
 
 import AppHeader from './components/AppHeader/AppHeader'
 import GameScreen from './components/GameScreen/GameScreen'
@@ -72,7 +72,7 @@ class App extends Component {
 		}
 
 		this.setState(initialState)
-		localStorage.setItem('semisen', JSON.stringify(this.state))
+		localStorage.removeItem('semisen')
 	}
 
 	get effects() {

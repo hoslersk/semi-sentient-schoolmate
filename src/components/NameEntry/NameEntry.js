@@ -11,7 +11,6 @@ class NameEntry extends PureComponent {
 	}
 
 	handleChange(event) {
-		debugger
 		this.props.updateAction(event)
 	}
 
